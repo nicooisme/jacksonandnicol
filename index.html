@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Nicole & Jackson Baker — December 20, 2025</title>
+  <meta name="description" content="Wedding website for Nicole & Jackson Baker — December 20, 2025 in Millbrook, Alabama.">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+  /* Minimal copy of original styles for portability */
+  @font-face { font-family: 'Weddingfield'; src: local('Weddingfield'); font-display: swap; }
+  :root{ --bg:#f3fbf3; --paper:#ffffff; --ink:#152315; --muted:#4c694c; --accent:#2f7a3a; --shadow:0 8px 26px rgba(9,41,9,.12); --radius:14px; --max:1100px; }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Arial;background:var(--bg);color:var(--ink);}
+  .container{width:100%;max-width:var(--max);margin:0 auto;padding:0 20px}
+  header{background:linear-gradient(180deg,#cde9c1 0%, #f8fff8 100%);text-align:center;padding:78px 20px 54px;border-bottom:1px solid #e0f0e1}
+  h1{font-family:'Weddingfield','Playfair Display',Georgia,serif;font-size:clamp(40px,6vw,72px);margin:.2em 0 .1em;color:#1b3f1e}
+  .btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:12px;border:1px solid #bfe3c2;background:var(--accent);color:#fff;font:600 15px/1.2 Inter,system-ui;box-shadow:var(--shadow);cursor:pointer}
+  .card{background:var(--paper);border-radius:var(--radius);box-shadow:var(--shadow);padding:24px;border:1px solid #e3f1e4}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Nicole & Jackson Baker</h1>
+      <p>December 20, 2025 — Millbrook, Alabama</p>
+      <button class="btn" id="addToCal">Add to Calendar</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="details">
+      <div class="container">
+        <div class="card">
+          <h2>Welcome to Our Wedding 🌿</h2>
+          <p>We’re so excited to invite you to celebrate love, laughter, and our new beginning together. Join us on <b>December 20th, 2025</b> in <b>Millbrook, Alabama</b>.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="location">
+      <div class="container">
+        <div class="card">
+          <h2>📍 Location</h2>
+          <p><b>79 Thornfield Dr, Millbrook, AL 36054 — United States</b></p>
+          <iframe class="map" loading="lazy" src="https://www.google.com/maps?q=79%20Thornfield%20Dr%20Millbrook%20AL%2036054&output=embed" title="Map to location" style="width:100%;height:420px;border:0;border-radius:14px;box-shadow:var(--shadow)"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section id="schedule">
+      <div class="container">
+        <div class="grid-2">
+          <div class="card">
+            <h2>Schedule</h2>
+            <p>3:30 PM — Guests arrive<br>
+               4:00 PM — Ceremony<br>
+               5:00 PM — Cocktail & Photos<br>
+               6:00 PM — Dinner<br>
+               8:00 PM — First dance<br>
+               10:00 PM — Closing</p>
+          </div>
+          <div class="card">
+            <h2>Dress Code</h2>
+            <p>Formal festive attire. Please avoid white or off-white.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="gifts">
+      <div class="container">
+        <div class="card">
+          <h2>🎁 Gift List</h2>
+          <p>Thank you for thinking of us! Below are some simple couple gifts. If you purchase one, please mark it as “Purchased”.</p>
+          <div id="giftList">
+            <div class="gift-item">
+              <a href="https://www.amazon.com/dp/B07Y9X5BCN" target="_blank" rel="noopener">Toaster</a>
+              <button onclick="markGift('toaster', this)">Mark Purchased</button>
+            </div>
+            <div class="gift-item">
+              <a href="https://www.amazon.com/dp/B08M8H6YWB" target="_blank" rel="noopener">Coffee Maker</a>
+              <button onclick="markGift('coffee', this)">Mark Purchased</button>
+            </div>
+            <div class="gift-item">
+              <a href="https://www.amazon.com/dp/B07N7C4C73" target="_blank" rel="noopener">Towel Set</a>
+              <button onclick="markGift('towels', this)">Mark Purchased</button>
+            </div>
+            <div class="gift-item">
+              <a href="https://www.amazon.com/dp/B08N5M7S6K" target="_blank" rel="noopener">Picture Frame</a>
+              <button onclick="markGift('frame', this)">Mark Purchased</button>
+            </div>
+            <div class="gift-item">
+              <a href="https://www.amazon.com/dp/B08Z7FZ8Z5" target="_blank" rel="noopener">Dinnerware Set</a>
+              <button onclick="markGift('dinnerware', this)">Mark Purchased</button>
+            </div>
+          </div>
+          <small style="color:#4c694c;display:block;margin-top:10px">Note: purchase status is saved only on your device (demo). For a shared registry, connect Amazon Wedding Registry.</small>
+        </div>
+      </div>
+    </section>
+
+    <section id="rsvp">
+      <div class="container">
+        <div class="card">
+          <h2>RSVP</h2>
+          <p>Please confirm your attendance by <b>November 20th, 2025</b>.</p>
+          <button class="btn" id="confirmPresenca">Confirmar Presença</button>
+          <!-- Embedded Google Form modal -->
+          <div id="rsvpModal" aria-hidden="true" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:9999;align-items:center;justify-content:center;padding:24px;">
+            <div role="dialog" aria-modal="true" aria-label="RSVP Form" style="width:100%;max-width:920px;background:var(--paper);border-radius:12px;overflow:hidden;box-shadow:var(--shadow);">
+              <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 14px;border-bottom:1px solid #e6f1e6;background:linear-gradient(180deg,#f8fff8,#ffffff);">
+                <strong style="font-size:16px;color:var(--accent);">Confirmar Presença</strong>
+                <button id="closeRsvpModal" aria-label="Fechar" style="background:transparent;border:0;font-size:20px;cursor:pointer;padding:6px 10px;">✕</button>
+              </div>
+              <iframe id="rsvpFrame" src="" title="RSVP Form" style="width:100%;height:680px;border:0;display:block;"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>With love 🌿<br><b>Nicole & Jackson Baker</b></p>
+      <p>December 20, 2025 — Millbrook, Alabama</p>
+    </div>
+  </footer>
+
+  <script>
+  // Gift purchase tracking
+  function markGift(id,btn){
+    localStorage.setItem("gift_"+id,"purchased");
+    btn.textContent="Purchased ✅";
+    btn.disabled=true;
+  }
+  window.addEventListener('DOMContentLoaded',()=>{
+    ['toaster','coffee','towels','frame','dinnerware'].forEach(id=>{
+      if(localStorage.getItem("gift_"+id)==="purchased"){
+        const b=document.querySelector(`button[onclick*="${id}"]`);
+        if(b){b.textContent="Purchased ✅";b.disabled=true;}
+      }
+    });
+  });
+
+  // RSVP mailto (guarded in case form is not present)
+  const rsvpFormEl = document.getElementById("rsvpForm");
+  if (rsvpFormEl) {
+    rsvpFormEl.addEventListener("submit", e => {
+      e.preventDefault();
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const message = document.getElementById("message").value;
+      const subject = encodeURIComponent("RSVP • Nicole & Jackson 12/20/2025");
+      const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nMessage: ${message}`);
+      window.location.href = `mailto:nunutscloud@gmail.com?subject=${subject}&body=${body}`;
+    });
+  }
+
+  const confirmBtn = document.getElementById('confirmPresenca');
+  if (confirmBtn) {
+    confirmBtn.addEventListener('click', () => {
+      // Open embedded modal with the Google Form
+      const modal = document.getElementById('rsvpModal');
+      const iframe = document.getElementById('rsvpFrame');
+      if (modal && iframe) {
+        iframe.src = 'https://docs.google.com/forms/d/e/1FAIpQLSd4A9FacvhDzzIV_55qIjZKY9GrtmREyTKCnWWoaiRh0ihiQQ/viewform?usp=header&embedded=true';
+        modal.style.display = 'flex';
+        modal.setAttribute('aria-hidden', 'false');
+        // move focus into the modal
+        document.getElementById('closeRsvpModal').focus();
+      } else {
+        // fallback: open in same tab
+        window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSd4A9FacvhDzzIV_55qIjZKY9GrtmREyTKCnWWoaiRh0ihiQQ/viewform?usp=header';
+      }
+    });
+  }
+
+  // Modal controls
+  const closeModalBtn = document.getElementById('closeRsvpModal');
+  const modalEl = document.getElementById('rsvpModal');
+  function closeRsvpModal(){
+    if(modalEl){
+      modalEl.style.display='none';
+      modalEl.setAttribute('aria-hidden','true');
+      const iframe = document.getElementById('rsvpFrame');
+      if(iframe){ iframe.src = ''; }
+      confirmBtn.focus();
+    }
+  }
+  if(closeModalBtn){ closeModalBtn.addEventListener('click', closeRsvpModal); }
+  // close on backdrop click
+  if(modalEl){ modalEl.addEventListener('click', (e)=>{ if(e.target===modalEl) closeRsvpModal(); }); }
+  // close on ESC
+  document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeRsvpModal(); });
+
+  // Smart "Add to Calendar"
+  const gStart = "20251220T220000Z";
+  const gEnd   = "20251221T030000Z";
+  const title  = encodeURIComponent("Nicole & Jackson Wedding");
+  const details= encodeURIComponent("Join us for the wedding of Nicole & Jackson Baker!");
+  const location = encodeURIComponent("79 Thornfield Dr, Millbrook, AL 36054, USA");
+  const googleCalURL = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${gStart}%2F${gEnd}&details=${details}&location=${location}`;
+
+  function buildICS(){
+    const ics = `BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Nicole&Jackson//Wedding
+BEGIN:VEVENT
+UID:${Date.now()}@nicole-jackson
+DTSTAMP:${new Date().toISOString().replace(/[-:]/g,'').replace(/\.\d{3}Z$/,'Z')}
+DTSTART:20251220T160000
+DTEND:20251220T210000
+SUMMARY:Nicole & Jackson Wedding
+LOCATION:79 Thornfield Dr\\, Millbrook\\, AL 36054\\, USA
+DESCRIPTION:Join us for the wedding of Nicole & Jackson Baker!
+END:VEVENT
+END:VCALENDAR`;
+    return new Blob([ics], {type:'text/calendar;charset=utf-8'});
+  }
+
+  function isiOS(){ return /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream; }
+  function isMac(){ return /Macintosh|Mac OS X/.test(navigator.userAgent); }
+  function isAndroid(){ return /Android/.test(navigator.userAgent); }
+
+  document.getElementById("addToCal").addEventListener("click", () => {
+    if (isAndroid() || (!isiOS() && !isMac())) {
+      window.open(googleCalURL, "_blank", "noopener");
+      return;
+    }
+    const blob = buildICS();
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url; a.download = 'nicole-jackson-wedding.ics';
+    a.click();
+    setTimeout(()=>URL.revokeObjectURL(url), 3000);
+  });
+  </script>
+</body>
+</html>
